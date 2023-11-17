@@ -29,38 +29,34 @@ const  Signup =  ({setComponent}) => {
     }
     return (
         <>
-            <div className="form d-flex justify-content-center">
-                <div className="signup-form">
-                    <form>
-                        <div className="">
-                            <div>fullname</div>
-                            <input type="text" placeholder="John" value={input.value} name="name" required onChange={handleChange} />
+            <div class="forms shadow-lg  p-4 mt-4">
+                <div class="form-content mx-auto">
+                    <div class="signup-form">
+                        <div class="title">Signup</div>
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                <input type="text" placeholder="John" value={input.fullname} name="fullname" required onChange={handleChange} />
+                            </div>
+                            <div class="input-box">
+                                <input type="text" placeholder="Doe" value={input.fathername} name="fathername" required onChange={handleChange} />
+                            </div>
+                            <div class="input-box">
+                                <input type="text" placeholder="Doe" value={input.email} name="email" required onChange={handleChange} />
+                            </div>
+                            <div class="input-box">
+                                <input type="phonenumber" placeholder="+91- 8924988216" value={input.phonenumber} name="phonenumber" required onChange={handleChange} />
+                            </div>
+                            <div class="input-box">
+                                <input type="password" placeholder="password" value={input.password} name="password" required onChange={handleChange} />
+                            </div>
+                            <div class="button input-box">
+                                <button type="submit" onClick={handleSubmit}>Submit</button>
+                            </div>
+                            <div class="text sign-up-text">Already have an account?<div onClick={() => setComponent("login")}> <label for="flip">Login
+                                now</label></div>
+                            </div>
                         </div>
-                        <div>
-                            <div>fathername</div>
-                            <input type="text" placeholder="Doe" value={input.value} name="fathername" required onChange={handleChange} />
-                        </div>
-                        <div>
-                            
-                        <div>email</div>
-                        <input type="text" placeholder="Doe" value={input.value} name="email" required onChange={handleChange} />
-                        </div>
-                        <div>
-
-                        <div>phonenumber</div>
-                        <input type="text" placeholder="+91- 8924988216" value={input.value} name="phonenumber" required onChange={handleChange} />
-                        </div>
-                        <div>
-
-                        <div>password</div>
-                        <input type="text" placeholder="password" value={input.value} name="password" required onChange={handleChange} />
-                        </div>
-                        <div>
-                            <button className="btn btn-pimary" onSubmit={handleSubmit}>
-                                Sign Up
-                            </button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </>

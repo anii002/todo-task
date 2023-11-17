@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = ({ setComponent }) => {
     const navigate = useNavigate();
-    const [Data, setData] = useState({
+    const [userData, setData] = useState({
         email: '',
         phonenumber: '',
         password: ''
@@ -12,7 +12,7 @@ const Login = ({ setComponent }) => {
 
     const handleChange = (e) => {
         setData({
-            ...Data,
+            ...userData,
             [e.target.name]: e.target.value
         })
     }
@@ -24,7 +24,7 @@ const Login = ({ setComponent }) => {
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            const result = await axios.post("http://loclhost:5000/users/login", Data)
+            const result = await axios.post("http://loclhost:5000/users/login", userData)
             localStorage.setItem("user", JSON.stringify({ ...result.data.user, token: result.data.token }))
             navigate('/dashboard')
         } catch (err) {
@@ -32,30 +32,34 @@ const Login = ({ setComponent }) => {
         }
     }
     return (
-        <div className="form d-flex justify-content-center">
-            <div className="login-form">
+       
 
-                <form>
-                    <label>Login</label>
-                    <div>
-                        <div>email/phonenumber</div>
-                        <input type="text" placeholder="+91- 8924988216" value={Data.value} name="phonenumber" required onChange={handleChange} />
-                    </div>
-                    <div>
+         <div className="forms shadow-lg  p-4 mt-4">
+                <div className="form-content mx-auto">
+                    <div className="login-form">
+                        <div className="title">Login</div>
+                        <div className="input-boxes">
+                            <div className="input-box">
+                            <input type="email" placeholder="Enter your email" required value={userData.email} name="email" onChange={handleChange} />
+                            </div>
+                            <div className="input-box">
+                                <input type="password" placeholder="Enter your password" required value={userData.password} name="password" onChange={handleChange} />
+                            </div>
 
-                        <div>password</div>
-                        <input type="text" placeholder="password" value={Data.value} name="password" required onChange={handleChange} />
-                    </div>
-                    <div>
-                        <button type="submit" className="btn btn-pimary" onClick={onSubmit}>
-                            Login
-                        </button>
+                            <div className="button input-box">
 
+                                <button type="submit" onClick={onSubmit}>Login</button>
+                            </div>
+
+                            <div className="text sign-up-text">Don't have an account? <div onClick={() => setComponent("signUp")}><label for="flip">Sigup
+                                now</label>
+                            </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div className="text" onClick={() => setComponent("signup")}> Not a member <label for="flip">Signup</label></div>
-                </form>
+                </div>
             </div>
-        </div>
     )
 }
 
