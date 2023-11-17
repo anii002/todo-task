@@ -32,34 +32,33 @@ const Login = ({ setComponent }) => {
         }
     }
     return (
-       
 
-         <div className="forms shadow-lg  p-4 mt-4">
-                <div className="form-content mx-auto">
-                    <div className="login-form">
-                        <div className="title">Login</div>
-                        <div className="input-boxes">
-                            <div className="input-box">
-                            <input type="email" placeholder="Enter your email" required value={userData.email} name="email" onChange={handleChange} />
-                            </div>
-                            <div className="input-box">
-                                <input type="password" placeholder="Enter your password" required value={userData.password} name="password" onChange={handleChange} />
-                            </div>
 
-                            <div className="button input-box">
-
-                                <button type="submit" onClick={onSubmit}>Login</button>
-                            </div>
-
-                            <div className="text sign-up-text">Don't have an account? <div onClick={() => setComponent("signUp")}><label for="flip">Sigup
-                                now</label>
-                            </div>
-                            </div>
-
+        <div className="forms shadow-lg rounded-4  p-4 mt-4">
+            <div className="form-content mx-auto">
+                <div className="login-form">
+                    <div className="title d-flex justify-content-center">Login</div>
+                    <div className="input-boxes">
+                        <div className="input-box">
+                            <label className="title">Email/Mobile</label>
+                            <input className="px-3" type="email" placeholder="John@gmail.com" required value={userData.email} name="email" onChange={handleChange} />
                         </div>
+                        <div className="input-box mt-4 mb-2">
+                            <label className="title mt-2">Password</label>
+                            <input className="px-3" type="password" placeholder="123123" required value={userData.password} name="password" onChange={handleChange} />
+                        </div>
+                        <div className="button input-box mt-5">
+                         <button type="submit" onClick={onSubmit}>Login</button>
+                        </div>
+
+                        <div className="text sign-up-text d-flex justify-content-center">Not a member?  <div onClick={() => setComponent("signUp")}><label for="flip">SignUp</label>
+                        </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+        </div>
     )
 }
 

@@ -8,12 +8,11 @@ function Home() {
     }
     return (
         <>
-            <div className="home">
+            <div className="d-flex justify-content-center">
                 {page === "login" ?
                     <Login setComponent={setComponent} />
                     : <Signup setComponent={setComponent} />
                 }
-
             </div>
         </>
     )
