@@ -20,10 +20,10 @@ const  Signup =  ({setComponent}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:500/users/signup", input)
+            await axios.post("http://localhost:5000/users/signup", input)
             setComponent('login')
         } catch (err) {
-            alert(err.respond.data.msg)
+            alert(err.response.data.msg);
         }
 
     }

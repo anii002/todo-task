@@ -24,11 +24,11 @@ const Login = ({ setComponent }) => {
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            const result = await axios.post("http://loclhost:5000/users/login", userData)
+            const result = await axios.post("http://localhost:5000/users/login", userData)
             localStorage.setItem("user", JSON.stringify({ ...result.data.user, token: result.data.token }))
             navigate('/dashboard')
         } catch (err) {
-            alert(err.respond.data.msg)
+            alert(err.response.data.msg);
         }
     }
     return (
