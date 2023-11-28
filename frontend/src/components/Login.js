@@ -43,7 +43,7 @@ const Login = ({ setComponent }) => {
                             <label className="title">Email/Mobile</label>
                             <input className="px-3" type="email" placeholder="John@gmail.com" required value={userData.email} name="email" onChange={handleChange} />
                         </div>
-                        <div className="input-box mt-4 mb-2">
+                        <div className="input-box mt-5">
                             <label className="title mt-2">Password</label>
                             <input className="px-3" type="password" placeholder="123123" required value={userData.password} name="password" onChange={handleChange} />
                         </div>

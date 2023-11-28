@@ -35,21 +35,28 @@ const  Signup =  ({setComponent}) => {
                         <div class="title d-flex justify-content-center">Signup</div>
                         <div class="input-boxes">
                             <div class="input-box">
+                                <label className="title">Full Name</label>
                                 <input className="px-3" type="text" placeholder="John" value={input.fullname} name="fullname" required onChange={handleChange} />
                             </div>
-                            <div class="input-box">
+                            <div class="input-box mt-5">
+                                <label className="title">Father Name</label>
                                 <input className="px-3" type="text" placeholder="Doe" value={input.fathername} name="fathername" required onChange={handleChange} />
                             </div>
-                            <div class="input-box">
+                            <div class="input-box mt-5">
+                                <label className="title">Email</label>
                                 <input className="px-3" type="text" placeholder="Doe" value={input.email} name="email" required onChange={handleChange} />
                             </div>
-                            <div class="input-box">
-                                <input className="px-3" type="phonenumber" placeholder="+91- 8924988216" value={input.phonenumber} name="phonenumber" required onChange={handleChange} />
+                            <div class="input-box mt-5">
+                                <label className="title">Phone Number:</label>
+                                <div className="d-flex">
+                                    <input className="phone px-2" placeholder="+91" />
+                                    <input className="px-3 phone-input mx-2" type="phonenumber" placeholder=" 8924988216" value={input.phonenumber} name="phonenumber" required onChange={handleChange} /></div>
                             </div>
-                            <div class="input-box">
+                            <div class="input-box mt-5">
+                                <label className="title">Password</label>
                                 <input className="px-3" type="password" placeholder="password" value={input.password} name="password" required onChange={handleChange} />
                             </div>
-                            <div class="button input-box">
+                            <div class="button input-box mt-5">
                                 <button type="submit" onClick={handleSubmit}>Submit</button>
                             </div>
                             <div class="text sign-up-text d-flex justify-content-center">Already have an account?<div onClick={() => setComponent("login")}> <label for="flip">Login
