@@ -1,7 +1,11 @@
 function dashboard() {
     return (
-        <>
-        <h1>hello</h1></>
+        <div >
+            <p>userId</p>
+            <label>title</label>
+            <input />
+        </div>
+
     )
 }
 

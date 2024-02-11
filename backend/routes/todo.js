@@ -2,7 +2,11 @@ const auth = require("../middleware/auth")
 const router = require("express").Router();
 
 router.get('/all', auth, async (req, res) => {
-    Todos.find({ userId: req.user }).sort({ createAt: -1 }).then((todo) => {
+    Todos.find(
+        { userId: req.user }
+    ).sort(
+        { createAt: -1 }
+    ).then((todo) => {
         res.json(todo)
     }).catch((err) => {
         console.log(err.message)
@@ -17,6 +21,7 @@ router.post("/", auth,  (req, res) => {
     }
     const todo = new Todos({
         title: req.body.title,
+        description:req.body.description,
         userId: req.user
     });
     todo.save().then(data => {
